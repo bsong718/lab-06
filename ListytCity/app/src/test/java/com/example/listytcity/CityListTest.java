@@ -51,11 +51,7 @@ class CityListTest {
         CityList cityList = mockCityList();
         City existing = mockCity();
         City notExisting = new City("Toronto", "Ontario");
-
-        // Should return true for existing city
         assertTrue(cityList.hasCity(existing));
-
-        // Should return false for non-existing city
         assertFalse(cityList.hasCity(notExisting));
     }
 
@@ -63,8 +59,6 @@ class CityListTest {
     void testDeleteCity() {
         CityList cityList = mockCityList();
         City existing = mockCity();
-
-        // Should remove the existing city
         cityList.delete(existing);
         assertFalse(cityList.hasCity(existing));
         assertEquals(0, cityList.countCities());

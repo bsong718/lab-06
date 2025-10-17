@@ -36,9 +36,7 @@ public class CityList {
 
     /**
      * Checks whether the given city exists in the list.
-     * Uses compareTo() == 0 to determine equality so it works
-     * even if equals()/hashCode() are not overridden.
-     * @param city the city to look for
+     * @param city
      * @return true if the city exists, false otherwise
      */
     public boolean hasCity(City city) {
@@ -52,10 +50,8 @@ public class CityList {
     }
 
     /**
-     * Deletes a city from the list if it exists,
-     * otherwise throws an exception.
-     * Uses compareTo() == 0 for matching.
-     * @param city the city to delete
+     * Deletes a city from the list if it exists
+     * @param city
      */
     public void delete(City city) {
         if (city == null) {
@@ -74,7 +70,7 @@ public class CityList {
 
     /**
      * Returns the total number of cities in the list
-     * @return the number of cities
+     * @return
      */
     public int countCities() {
         return cities.size();
