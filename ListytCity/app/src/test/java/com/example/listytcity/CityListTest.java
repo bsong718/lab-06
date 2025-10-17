@@ -46,4 +46,39 @@ class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
+    @Test
+    void testHasCity() {
+        CityList cityList = mockCityList();
+        City existing = mockCity();
+        City notExisting = new City("Toronto", "Ontario");
+
+        // Should return true for existing city
+        assertTrue(cityList.hasCity(existing));
+
+        // Should return false for non-existing city
+        assertFalse(cityList.hasCity(notExisting));
+    }
+
+    @Test
+    void testDeleteCity() {
+        CityList cityList = mockCityList();
+        City existing = mockCity();
+
+        // Should remove the existing city
+        cityList.delete(existing);
+        assertFalse(cityList.hasCity(existing));
+        assertEquals(0, cityList.countCities());
+    }
+
+    @Test
+    void testCountCities() {
+        CityList cityList = mockCityList();
+        City city2 = new City("Regina", "Saskatchewan");
+        City city3 = new City("Calgary", "Alberta");
+
+        cityList.add(city2);
+        cityList.add(city3);
+
+        assertEquals(3, cityList.countCities());
+    }
 }

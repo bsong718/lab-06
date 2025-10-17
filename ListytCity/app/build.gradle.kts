@@ -3,6 +3,10 @@ plugins {
 }
 
 android {
+    tasks.withType<Test>{
+        useJUnitPlatform()
+    }
+
     namespace = "com.example.listytcity"
     compileSdk = 36
 
